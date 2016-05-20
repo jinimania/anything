@@ -13,6 +13,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
+apply plugin: 'idea'
 
 jar {
     baseName = 'anything'
@@ -29,17 +30,21 @@ repositories {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.projectlombok:lombok:1.16.6')
-    compile('org.springframework.boot:spring-boot-starter-security')
+//    compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile('org.mariadb.jdbc:mariadb-java-client:1.4.4')
     runtime('org.hsqldb:hsqldb')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
     //thymeleaf html5 닫기 오류 처리 라이브러리
     compile('net.sourceforge.nekohtml:nekohtml:1.9.22')
     //thymeleaf html5
-    compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE")
-    compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.2.9")
+//    compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE')
+    compile('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.2.9')
+
+    compile('org.springframework:springloaded:1.2.6.RELEASE')
 }
 
 
